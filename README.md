@@ -136,7 +136,7 @@ wsl --import Ubuntu D:\wsl\Ubuntu\ D:\wsl\ubuntu_backup.tar --version 2
 ```powershell
 ubuntu config --default-user dwei
 ```
-（替换 ubuntu2404 为你的发行版可执行文件名，通过 wsl -l -v 查看）  
+（替换 ubuntu 为你的发行版可执行文件名，通过 wsl -l -v 查看）  
 
 ### 步骤 6：验证迁移结果  
 启动发行版：  
@@ -153,7 +153,7 @@ wsl -d Ubuntu
 
 ### 快速启动
 打开 VSCode，点击左下角 绿色远程连接图标 > "New WSL Window"。  
-选择你的 WSL 发行版（如 Ubuntu-22.04）。  
+选择你的 WSL 发行版（如 Ubuntu）。  
 VSCode 会自动在 WSL 中安装服务端组件，完成后即可直接操作 Linux 文件系统。  
 
 ## 9.高阶环境配置要求
