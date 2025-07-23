@@ -49,6 +49,7 @@ This message is shown once a day. To disable it please create the
 /home/dwei/.hushlogin file.
 dwei@Dwei:~$
 ```
+
 ### （1）过程说明：  
 #### UNIX 用户创建：  
 你创建了一个默认的 UNIX 用户，用户名为 dwei，并设置了密码（输入时不可见，需确保两次输入一致）。  
