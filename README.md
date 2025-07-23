@@ -1,6 +1,6 @@
 # Ubuntu_setting
 
-#在windows上部署Ubuntu教程  
+在windows上部署Ubuntu教程  
 
 ##1.打开 PowerShell 以管理员身份运行。  
 
