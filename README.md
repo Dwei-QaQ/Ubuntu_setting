@@ -151,7 +151,84 @@ wsl -d Ubuntu
 ### 确保已启用 WSL2  
 （Windows 功能中勾选 Windows Subsystem for Linux）
 
-### 
+### 快速启动
 打开 VSCode，点击左下角 绿色远程连接图标 > "New WSL Window"。  
 选择你的 WSL 发行版（如 Ubuntu-22.04）。  
 VSCode 会自动在 WSL 中安装服务端组件，完成后即可直接操作 Linux 文件系统。  
+
+## 9.高阶环境配置要求
+
+### 1.安装 NVIDIA CUDA 12.x
+
+#### （1）检查 NVIDIA 驱动  
+cmd中输入  
+```bash
+nvidia-smi  # 确保已安装驱动（若无输出，需先安装驱动）
+```
+
+如果未安装驱动：  
+```bash
+sudo ubuntu-drivers autoinstall  # 自动安装推荐驱动
+sudo reboot
+```
+
+#### (2) 安装 CUDA 12.x
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/12.4.1/local_installers/cuda-repo-ubuntu2204-12-4-local_12.4.1-550.54.15-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu2204-12-4-local_12.4.1-550.54.15-1_amd64.deb
+sudo cp /var/cuda-repo-ubuntu2204-12-4-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo apt update
+sudo apt -y install cuda-toolkit-12-4
+```
+
+#### (3) 配置环境变量
+```bash
+echo 'export PATH=/usr/local/cuda-12.4/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.4/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+```
+
+验证安装：
+```bash
+nvcc --version  # 应显示 CUDA 12.4
+```
+
+### 2.安装 Python 3.10
+Ubuntu 22.04 默认自带 Python 3.10，直接使用： 
+```bash
+sudo apt update
+sudo apt install -y python3 python3-venv python3-dev
+```
+
+设置默认 Python：  
+```bash
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+sudo update-alternatives --config python3  # 选择 3.10
+```
+
+### 3. 安装 PyTorch 2.0+ with CUDA 12.x
+#### (1) 创建虚拟环境  
+```bash
+python3 -m venv ~/pytorch_env
+source ~/pytorch_env/bin/activate
+```
+
+#### (2) 安装 PyTorch 
+```bash
+pip install --upgrade pip
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+```
+
+#### (3) 验证安装
+```bash
+python3 -c "import torch; print(torch.__version__); print(torch.cuda.is_available())"
+```
+
+预期输出：  
+```bash
+2.2.0+cu121  # 版本可能更新
+True         # CUDA 可用
+```
+
