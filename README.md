@@ -146,3 +146,12 @@ wsl -d Ubuntu
 
 ## 8.vscode远程连接手段调用Ubuntu  
 
+### 安装 Remote - WSL 扩展  
+打开 VSCode → 左侧 扩展图标（Extensions） → 搜索 Remote - WSL。点击 Install。  
+### 确保已启用 WSL2  
+（Windows 功能中勾选 Windows Subsystem for Linux）
+
+### 
+打开 VSCode，点击左下角 绿色远程连接图标 > "New WSL Window"。  
+选择你的 WSL 发行版（如 Ubuntu-22.04）。  
+VSCode 会自动在 WSL 中安装服务端组件，完成后即可直接操作 Linux 文件系统。  
