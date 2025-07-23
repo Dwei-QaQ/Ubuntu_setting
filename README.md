@@ -7,7 +7,6 @@
 4.下载完成后，打开终端，确保使用的是 Windows Powershell 而不是 cmd，输入以下内容：  
 ```bash
 Add-AppxPackage -Path <Ubuntu安装包路径> 
-```
-   Add-AppxPackage -Path <Ubuntu安装包路径>   
+```  
    <Ubuntu安装包路径>请写上实际的文件路径。回车即可安装。(建议不要放在C盘，会爆满的）  
 5.   
