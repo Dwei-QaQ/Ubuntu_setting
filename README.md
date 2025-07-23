@@ -45,6 +45,17 @@ Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
 This message is shown once a day. To disable it please create the
 /home/dwei/.hushlogin file.
 dwei@Dwei:~$
-```  
+```
+过程说明：  
+UNIX 用户创建
+
+你创建了一个默认的 UNIX 用户，用户名为 dwei，并设置了密码（输入时不可见，需确保两次输入一致）。
+
+此用户是普通用户，拥有标准权限。需使用 sudo 执行管理员命令。
+
+安装成功提示
+
+Installation successful! 表示 Ubuntu 系统已正确部署到 WSL2 环境中。
+
 6.文件互操作  
 Windows 上操作 Linux：在 Windows 文件资源管理器左侧可以找到 Linux 的标志，点击 Linux 就可以操作 Linux 文件。  
