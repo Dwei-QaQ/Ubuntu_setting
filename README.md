@@ -48,7 +48,7 @@ This message is shown once a day. To disable it please create the
 /home/dwei/.hushlogin file.
 dwei@Dwei:~$
 ```
-### 过程说明：  
+### （1）过程说明：  
 #### UNIX 用户创建：  
 你创建了一个默认的 UNIX 用户，用户名为 dwei，并设置了密码（输入时不可见，需确保两次输入一致）。  
 此用户是普通用户，拥有标准权限。需使用 sudo 执行管理员命令。  
@@ -64,7 +64,7 @@ Linux 内核: 6.6.87.2-microsoft-standard-WSL2
 内存占用: 5%（轻量级）  
 网络配置：WSL2 分配的虚拟 IP: 172.26.41.70（仅主机内访问，无需手动配置）  
 
-#### 你现在可以做什么？  
+#### （4）你现在可以做什么？  
 基本操作：  
 输入 Linux 命令（如 ls, cd, cat）直接与 Ubuntu 交互。  
 示例：  
@@ -76,7 +76,7 @@ sudo apt update
 sudo apt install git
 ```
 
-### 注意事项：  
+### （2）注意事项：  
 密码安全：  
 你设置的 UNIX 密码仅用于 WSL 内部（与 Windows 密码无关），建议记住它（sudo 操作时需要）。
 
