@@ -1,8 +1,8 @@
 # Ubuntu_setting  在windows上部署Ubuntu教程  
 
-## 1.打开 PowerShell 以管理员身份运行。  
+## 1.打开 PowerShell 以管理员身份运行  
 
-## 2.输入命令 wsl --install 来安装 WSL。  
+## 2.输入命令 wsl --install 来安装 WSL  
 
 ```bash
 wsl --install 
@@ -10,19 +10,19 @@ wsl --install
 
 ## 3.安装完成后，您可以通过 Microsoft Store 下载所需的 Linux 发行版  如（Ubuntu）  
 
-## 4.下载完成后，打开终端，确保使用的是 Windows Powershell 而不是 cmd，输入以下内容：  
+## 4.下载完成后，打开终端，确保使用的是 Windows Powershell 而不是 cmd，输入以下内容  
 
 ```bash
 Add-AppxPackage -Path <Ubuntu安装包路径> 
 ```  
 
- <Ubuntu安装包路径>请写上实际的文件路径。回车即可安装。(建议不要放在C盘，会爆满的） 
+ <Ubuntu安装包路径>请写上实际的文件路径。回车即可安装。（建议不要放在C盘，会爆满的）
 
 ## 5.创建新用户和密码  
 
 这一步需要输入用户名和密码，注意：输密码的界面是看不到的，不要认为是哪里出问题了。  
 在输入完用户名称和密码之后，就代表安装成功了  
-如示例： 
+如示例
 
 ```bash
 Installing, this may take a few minutes...
@@ -55,18 +55,18 @@ This message is shown once a day. To disable it please create the
 dwei@Dwei:~$
 ```
 
-### （1）过程说明：  
+### （1）过程说明  
 
-#### UNIX 用户创建：  
+#### UNIX 用户创建  
 
 你创建了一个默认的 UNIX 用户，用户名为 dwei，并设置了密码（输入时不可见，需确保两次输入一致）。  
 此用户是普通用户，拥有标准权限。需使用 sudo 执行管理员命令。  
 
-#### 安装成功提示：  
+#### 安装成功提示  
 
 Installation successful! 表示 Ubuntu 系统已正确部署到 WSL2 环境中。  
 
-#### 首次启动信息： 
+#### 首次启动信息
 
 系统基本信息：  
 Ubuntu 版本: 24.04.1 LTS（长期支持版）  
@@ -89,7 +89,7 @@ sudo apt update
 sudo apt install git
 ```
 
-### （2）注意事项：  
+### （2）注意事项  
 
 密码安全：  
 你设置的 UNIX 密码仅用于 WSL 内部（与 Windows 密码无关），建议记住它（sudo 操作时需要）。
@@ -103,7 +103,7 @@ Windows 上操作 Linux：在 Windows 文件资源管理器左侧可以找到 Li
 
 ## 7.转换路径  
 
-### 步骤 1：确认当前发行版信息    
+### 步骤 1：确认当前发行版信息
 
 在 Windows PowerShell 中运行：  
 
@@ -120,7 +120,7 @@ wsl --list --verbose
 
 记录需迁移的发行版名称（如 Ubuntu）和状态，这个发行版名称可能有不同！  
 
-### 步骤 2：导出发行版为备份文件    
+### 步骤 2：导出发行版为备份文件
 
 ```bash
 wsl --export <发行版名称> <备份文件路径.tar>  
@@ -171,7 +171,8 @@ ubuntu config --default-user dwei
 
 （替换 ubuntu 为你的发行版可执行文件名，通过 wsl -l -v 查看）  
 
-### 步骤 6：验证迁移结果  
+### 步骤 6：验证迁移结果
+
 启动发行版：  
 
 ```powershell
@@ -241,7 +242,8 @@ nvcc --version  # 应显示 CUDA 12.4
 
 ### 2.安装 Python 3.10
 
-Ubuntu 22.04 默认自带 Python 3.10，直接使用： 
+Ubuntu 22.04 默认自带 Python 3.10，直接使用：
+
 ```bash
 sudo apt update
 sudo apt install -y python3 python3-venv python3-dev
@@ -263,7 +265,7 @@ python3 -m venv ~/pytorch_env
 source ~/pytorch_env/bin/activate
 ```
 
-#### (2) 安装 PyTorch 
+#### (2) 安装 PyTorch
 
 ```bash
 pip install --upgrade pip
@@ -282,3 +284,4 @@ python3 -c "import torch; print(torch.__version__); print(torch.cuda.is_availabl
 2.2.0+cu121  # 版本可能更新
 True         # CUDA 可用
 ```
+
