@@ -1,5 +1,7 @@
 # Ubuntu_setting  在windows上部署Ubuntu教程  
 
+如有什么问题请联系作者！！！
+
 ## 1.打开 PowerShell 以管理员身份运行  
 
 ## 2.输入命令 wsl --install 来安装 WSL  
@@ -7,6 +9,8 @@
 ```bash
 wsl --install 
 ```
+
+注：这一步仅是对于利用安装包的操作
 
 ## 3.安装完成后，您可以通过 Microsoft Store 下载所需的 Linux 发行版  如（Ubuntu）  
 
